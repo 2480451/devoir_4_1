@@ -26,6 +26,8 @@ meilleur_prix_achat: float
 meilleure_option_achat: str
 quantité_réelle_en_petits_sacs: float
 quantité_réelle_en_grands_sacs: float
+économie_petits_sacs: float
+économie_grands_sacs: float
 
 # LOGIQUE
 quantité_désirée = float(input("Veuillez saisir la masse désirée du produit (en kg): "))
@@ -42,6 +44,8 @@ prix_achat_en_petit_sac = prix_base_en_petit_sac - rabais_achat_en_petit_sac
 prix_achat_en_grand_sac = prix_base_en_grand_sac - rabais_achat_en_grand_sac
 quantité_réelle_en_petits_sacs = quantité_petit_sac_nécessaire * QUANTITÉ_PETIT_SAC
 quantité_réelle_en_grands_sacs = quantité_grand_sac_nécessaire * QUANTITÉ_GRAND_SAC
+économie_petits_sacs = prix_achat_vrac - prix_achat_en_petit_sac
+économie_grands_sacs = prix_achat_en_grand_sac - prix_achat_en_grand_sac
 
 print("")
 print(f"Le prix d'achat du produit en vrac est de: {prix_achat_vrac:17.2f} $")
@@ -60,8 +64,8 @@ else:
     print(f"La meilleur option est l'achat en {meilleure_option_achat}.")
 
 if meilleure_option_achat == "petits sacs":
-    print(f"La quantité réelle achetée sera de {quantité_réelle_en_petits_sacs}.")
+    print(f"La quantité réelle achetée sera de {quantité_réelle_en_petits_sacs} kg.")
+    print(f"L'économie sera de {économie_petits_sacs:.2f} $ par rapport à l'achat en vrac.")
 elif meilleure_option_achat == "grands sacs":
-    print(f"La quantité réelle achetée sera de {quantité_réelle_en_grands_sacs}.")
-
-
+    print(f"La quantité réelle achetée sera de {quantité_réelle_en_grands_sacs} kg.")
+    print(f"L'économie sera de {économie_grands_sacs:.2f} $ par rapport à l'achat en vrac.")
