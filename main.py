@@ -61,6 +61,8 @@ print("")
 if prix_achat_en_petit_sac < prix_achat_vrac and prix_achat_en_petit_sac < prix_achat_en_grand_sac:
     meilleure_option_achat = "petits sacs"
     print(f"La meilleure option est l'achat en {meilleure_option_achat}.")
+
+# PMC le 'and' n'est pas nécessaire 
 elif prix_achat_en_grand_sac < prix_achat_vrac and prix_achat_en_grand_sac < prix_achat_en_petit_sac:
     meilleure_option_achat = "grands sacs"
     print(f"La meilleure option est l'achat en {meilleure_option_achat}.")
